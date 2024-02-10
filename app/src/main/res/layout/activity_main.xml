@@ -6,33 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.example.pruebacanva.CustomView
-        android:id="@+id/customView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <SeekBar
-        android:id="@+id/seekBarSlope"
+    <EditText
+        android:id="@+id/editTextSlope"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/customView"
-        android:padding="16dp"
-        android:max="10"
-        android:progress="5"
-        android:thumbTint="@android:color/holo_blue_dark"
-        android:progressTint="@android:color/holo_blue_dark"/>
+        android:hint="Pendiente"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="16dp"/>
 
-    <SeekBar
-        android:id="@+id/seekBarIntercept"
+    <EditText
+        android:id="@+id/editTextIntercept"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/seekBarSlope"
-        android:layout_marginTop="16dp"
-        android:padding="16dp"
-        android:max="100"
-        android:progress="50"
-        android:thumbTint="@android:color/holo_blue_dark"
-        android:progressTint="@android:color/holo_blue_dark"/>
+        android:hint="Ordenada al origen"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/editTextSlope"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/buttonEnviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        android:layout_below="@id/editTextIntercept"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
 
 </RelativeLayout>

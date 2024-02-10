@@ -1,4 +1,5 @@
 package com.example.pruebacanva;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -55,15 +56,5 @@ public class CustomView extends View {
             startX = x;
             startY = y;
         }
-    }
-
-    // Método para obtener el valor de la ordenada al origen
-    public float getIntercept() {
-        return intercept;
-    }
-
-    // Método para obtener el valor de la pendiente
-    public float getSlope() {
-        return slope;
     }
 }
