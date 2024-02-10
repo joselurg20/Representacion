@@ -1,59 +1,38 @@
 package com.example.pruebacanva;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.SeekBar;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private CustomView customView;
-    private SeekBar seekBarSlope, seekBarIntercept;
+    private EditText editTextSlope, editTextIntercept;
+    private Button buttonEnviar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        customView = findViewById(R.id.customView);
-        seekBarSlope = findViewById(R.id.seekBarSlope);
-        seekBarIntercept = findViewById(R.id.seekBarIntercept);
+        editTextSlope = findViewById(R.id.editTextSlope);
+        editTextIntercept = findViewById(R.id.editTextIntercept);
+        buttonEnviar = findViewById(R.id.buttonEnviar);
 
-        // Configura los rangos de las SeekBars según tus necesidades
-        seekBarSlope.setMax(10);
-        seekBarSlope.setProgress(5);
-        seekBarIntercept.setMax(100);
-        seekBarIntercept.setProgress(50);
-
-        // Configura los listeners de las SeekBars
-        seekBarSlope.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        buttonEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                float slope = (float) (progress - 5) / 5;
-                customView.setEquation(slope, customView.getIntercept());
-            }
+            public void onClick(View v) {
+                // Obtén los valores de la pendiente y la ordenada al origen
+                float slope = Float.parseFloat(editTextSlope.getText().toString());
+                float intercept = Float.parseFloat(editTextIntercept.getText().toString());
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
-        });
-
-        seekBarIntercept.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                float intercept = (float) (progress - 50);
-                customView.setEquation(customView.getSlope(), intercept);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+                // Envía los valores a la segunda pantalla
+                Intent intent = new Intent(MainActivity.this, GraphActivity.class);
+                intent.putExtra("slope", slope);
+                intent.putExtra("intercept", intercept);
+                startActivity(intent);
             }
         });
     }
