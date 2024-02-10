@@ -1,9 +1,13 @@
 package com.example.pruebacanva;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import com.example.pruebacanva.CustomView;
-
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 
 public class GraphActivity extends AppCompatActivity {
 
@@ -12,13 +16,17 @@ public class GraphActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
 
-        // Obtén los valores de la pendiente y la ordenada al origen de la intención
-        float slope = getIntent().getFloatExtra("slope", 0.0f);
-        float intercept = getIntent().getFloatExtra("intercept", 0.0f);
+        // Obtén los coeficientes de la parábola de la intención
+        float a = getIntent().getFloatExtra("a", 0.0f);
+        float b = getIntent().getFloatExtra("b", 0.0f);
+        float c = getIntent().getFloatExtra("c", 0.0f);
 
-        // Envía los valores a la vista CustomView para dibujar la gráfica
+        // Obtén el color seleccionado de la intención
+        int color = getIntent().getIntExtra("color", Color.BLUE); // Color predeterminado si no se recibe nada
+
+        // Envía los coeficientes a la vista CustomView para dibujar la parábola
         CustomView customView = findViewById(R.id.customView);
-        customView.setEquation(slope, intercept);
+        customView.setParabolaParams(a, b, c);
+        customView.setLineColor(color); // Establecer el color de la línea
     }
 }
-

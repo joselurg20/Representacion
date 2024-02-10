@@ -7,29 +7,71 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editTextSlope"
+        android:id="@+id/editTextA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Pendiente"
+        android:hint="Coeficiente a"
         android:inputType="numberDecimal"
         android:layout_marginTop="16dp"/>
 
     <EditText
-        android:id="@+id/editTextIntercept"
+        android:id="@+id/editTextB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ordenada al origen"
+        android:hint="Coeficiente b"
         android:inputType="numberDecimal"
-        android:layout_below="@id/editTextSlope"
+        android:layout_below="@id/editTextA"
         android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Coeficiente c"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/editTextB"
+        android:layout_marginTop="16dp"/>
+
+
+    <RadioGroup
+        android:id="@+id/colorRadioGroup"
+        android:layout_width="175dp"
+        android:layout_height="163dp"
+        android:layout_below="@+id/editTextC"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="81dp"
+        android:layout_marginEnd="135dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/redRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Rojo" />
+
+        <RadioButton
+            android:id="@+id/blueRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Azul" />
+
+        <RadioButton
+            android:id="@+id/greenRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verde" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/buttonEnviar"
-        android:layout_width="wrap_content"
+        android:layout_width="146dp"
         android:layout_height="wrap_content"
-        android:text="Enviar"
-        android:layout_below="@id/editTextIntercept"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
+        android:layout_below="@+id/colorRadioGroup"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="143dp"
+        android:text="Enviar" />
 
 </RelativeLayout>
