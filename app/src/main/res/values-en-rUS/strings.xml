@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PruebaCanva</string>
+    <string name="introduce_datos">Enter the data</string>
+    <string name="Coeficiente_a">Coefficient a</string>
+    <string name="Coeficiente_b">Coefficient b</string>
+    <string name="Coeficiente_c">Coefficient c</string>
+    <string name="Rojo">Red</string>
+    <string name="Azul">Blue</string>
+    <string name="Verde">Green</string>
+    <string name="Generar">Generate</string>
+    <string name="Volver">Back</string>
+</resources>

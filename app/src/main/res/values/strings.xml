@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">PruebaCanva</string>
+    <string name="introduce_datos">Introduce los datos</string>
+    <string name="Coeficiente_a">Coeficiente a</string>
+    <string name="Coeficiente_b">Coeficiente b</string>
+    <string name="Coeficiente_c">Coeficiente c</string>
+    <string name="Rojo">Rojo</string>
+    <string name="Azul">Azul</string>
+    <string name="Verde">Verde</string>
+    <string name="Generar">Generar</string>
+    <string name="Volver">Volver</string>
 </resources>

@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 
 public class GraphActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,5 +29,19 @@ public class GraphActivity extends AppCompatActivity {
         CustomView customView = findViewById(R.id.customView);
         customView.setParabolaParams(a, b, c);
         customView.setLineColor(color); // Establecer el color de la línea
+
+        // Agregar el OnClickListener al botón "Volver"
+        Button volverButton = findViewById(R.id.button);
+        volverButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Volver a MainActivity
+                Intent intent = new Intent(GraphActivity.this, MainActivity.class);
+                startActivity(intent);
+                // Finalizar la actividad actual
+                finish();
+            }
+        });
     }
-}
+    }
+

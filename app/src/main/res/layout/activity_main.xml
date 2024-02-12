@@ -1,77 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextA"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Coeficiente a"
-        android:inputType="numberDecimal"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/editTextB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Coeficiente b"
-        android:inputType="numberDecimal"
-        android:layout_below="@id/editTextA"
-        android:layout_marginTop="16dp"/>
-
-    <EditText
-        android:id="@+id/editTextC"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Coeficiente c"
-        android:inputType="numberDecimal"
-        android:layout_below="@id/editTextB"
-        android:layout_marginTop="16dp"/>
-
-
-    <RadioGroup
-        android:id="@+id/colorRadioGroup"
-        android:layout_width="175dp"
-        android:layout_height="163dp"
-        android:layout_below="@+id/editTextC"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="81dp"
-        android:layout_marginEnd="135dp"
-        android:orientation="vertical">
-
-        <RadioButton
-            android:id="@+id/redRadioButton"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Rojo" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Introduce los datos"
+            tools:textSize="18dp" />
 
-        <RadioButton
-            android:id="@+id/blueRadioButton"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editTextA"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Azul" />
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="91dp"
+            android:hint="Coeficiente a"
+            android:inputType="numberDecimal" />
 
-        <RadioButton
-            android:id="@+id/greenRadioButton"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editTextB"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Verde" />
+            android:layout_below="@id/editTextA"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="77dp"
+            android:hint="Coeficiente b"
+            android:inputType="numberDecimal" />
 
-    </RadioGroup>
+        <EditText
+            android:id="@+id/editTextC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextB"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="74dp"
+            android:hint="Coeficiente c"
+            android:inputType="numberDecimal" />
 
-    <Button
-        android:id="@+id/buttonEnviar"
-        android:layout_width="146dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/colorRadioGroup"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="143dp"
-        android:text="Enviar" />
+        <RadioGroup
+            android:id="@+id/colorRadioGroup"
+            android:layout_width="175dp"
+            android:layout_height="163dp"
+            android:layout_below="@+id/editTextC"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="81dp"
+            android:layout_marginEnd="135dp"
+            android:orientation="vertical">
 
-</RelativeLayout>
+            <RadioButton
+                android:id="@+id/redRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Rojo" />
+
+            <RadioButton
+                android:id="@+id/blueRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Azul" />
+
+            <RadioButton
+                android:id="@+id/greenRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verde" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/buttonEnviar"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/colorRadioGroup"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="142dp"
+            android:text="Generar" />
+
+    </RelativeLayout>
+</ScrollView>
